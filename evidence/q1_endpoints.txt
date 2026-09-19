@@ -1,0 +1,8 @@
+===== port 8000 =====
+healthz -> HTTP 200
+{"label":"spam"}
+{"label":"ham"}
+===== port 8001 =====
+healthz -> HTTP 200
+{"label":"spam"}
+{"label":"ham"}

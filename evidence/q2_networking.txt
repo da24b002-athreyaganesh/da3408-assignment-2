@@ -1,0 +1,7 @@
+=== DNS resolution of the service name from inside the api container ===
+cache -> 172.19.0.2
+
+=== the compose network ===
+athreya_da3408_assign_2_default	bridge
+
+redis ping: True

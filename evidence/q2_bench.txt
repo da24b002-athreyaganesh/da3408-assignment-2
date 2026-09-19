@@ -1,0 +1,11 @@
+=== 30 forced MISSes (cache flushed before each call) ===
+=== 30 HITs (primed once, then repeated) ===
+
+MISS  mean 0.892 ms   min 0.802 ms   n=30
+HIT   mean 0.135 ms   min 0.117 ms   n=30
+
+speedup: 6.61x faster on a cache hit
+
+--- label correctness check ---
+MISS path: MISS 0.952
+HIT path:  HIT 0.165

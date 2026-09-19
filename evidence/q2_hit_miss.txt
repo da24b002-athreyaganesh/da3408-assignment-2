@@ -1,0 +1,20 @@
+=== flush, then two calls with the SAME spam text ===
+OK
+--- call 1 ---
+x-cache: MISS
+x-elapsed-ms: 1.612
+{"label":"spam"}
+--- call 2 ---
+x-cache: HIT
+x-elapsed-ms: 0.157
+{"label":"spam"}
+
+=== same for a HAM text ===
+--- call 1 ---
+x-cache: MISS
+x-elapsed-ms: 0.954
+{"label":"ham"}
+--- call 2 ---
+x-cache: HIT
+x-elapsed-ms: 0.211
+{"label":"ham"}

@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Trained artifact -- rebuilt by the Docker build
+model.joblib
+
+# LaTeX build output
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Scratch
+*.bak
+*.tmp

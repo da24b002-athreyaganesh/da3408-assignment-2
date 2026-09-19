@@ -1,0 +1,47 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: signup-audit
+spec:
+  completions: 8            # one pod per partition
+  parallelism: 4            # 4 x 500m = 2 of the 4 allocatable CPUs
+  completionMode: Indexed   # gives each pod JOB_COMPLETION_INDEX 0..7
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: auditor
+          image: python:3.11-slim
+          command: ["python", "/code/audit_part.py"]
+          env:
+            # --- Downward API: which pod, and which node it landed on ---
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+            - name: AUDIT_HOLD_SECONDS
+              value: "8"
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"     # equal to requests -> Guaranteed QoS
+              memory: "128Mi"
+          volumeMounts:
+            - name: parts
+              mountPath: /data
+            - name: code
+              mountPath: /code
+      volumes:
+        - name: parts
+          configMap:
+            name: signup-parts
+        - name: code
+          configMap:
+            name: audit-code

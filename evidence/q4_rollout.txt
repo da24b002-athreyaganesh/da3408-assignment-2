@@ -1,0 +1,25 @@
+=== rollout status ===
+deployment "spam-api" successfully rolled out
+
+=== rollout history ===
+deployment.apps/spam-api 
+REVISION  CHANGE-CAUSE
+1         initial rollout, spam-api:v1
+2         rolling update to spam-api:v2
+
+
+=== revision 1 ===
+  Annotations:	kubernetes.io/change-cause: initial rollout, spam-api:v1
+    Image:	spam-api:v1
+
+=== revision 2 ===
+  Annotations:	kubernetes.io/change-cause: rolling update to spam-api:v2
+    Image:	spam-api:v2
+
+=== both ReplicaSets: old scaled to 0, new to 2 ===
+NAME                  DESIRED   CURRENT   READY   AGE
+spam-api-6b756f8459   0         0         0       2m46s
+spam-api-746dbbf74b   2         2         2       42s
+
+=== live version now served ===
+spam-api:v2

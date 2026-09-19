@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spam-api
+  labels:
+    app: spam-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: spam-api
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0    # never drop below 2 ready pods
+      maxSurge: 1          # add one new pod before removing an old one
+  template:
+    metadata:
+      labels:
+        app: spam-api
+    spec:
+      containers:
+        - name: api
+          image: spam-api:v1
+          imagePullPolicy: IfNotPresent   # use the locally loaded image
+          ports:
+            - containerPort: 8000
+          env:
+            - name: REDIS_HOST
+              value: "no-cache-in-q4"     # no Redis here; API degrades to uncached
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 3

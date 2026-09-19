@@ -1,0 +1,2 @@
+# Training-only dependency: needed to read spam_dataset.csv, never at serving time.
+pandas==2.2.3

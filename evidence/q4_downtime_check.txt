@@ -1,0 +1,11 @@
+requests=250  ok=249  failed=1
+
+versions observed:
+    138 version=1.0.0
+    111 version=2.0.0
+      1 version=none
+
+first sighting of each version:
+18:57:09 version=1.0.0
+18:57:35 version=2.0.0
+18:57:36 version=none

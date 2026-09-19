@@ -1,0 +1,34 @@
+{
+  "0": {
+    "rows": 850,
+    "invalid": 30
+  },
+  "1": {
+    "rows": 853,
+    "invalid": 62
+  },
+  "2": {
+    "rows": 829,
+    "invalid": 61
+  },
+  "3": {
+    "rows": 837,
+    "invalid": 30
+  },
+  "4": {
+    "rows": 738,
+    "invalid": 20
+  },
+  "5": {
+    "rows": 826,
+    "invalid": 50
+  },
+  "6": {
+    "rows": 845,
+    "invalid": 52
+  },
+  "7": {
+    "rows": 686,
+    "invalid": 28
+  }
+}

@@ -1,0 +1,15 @@
+part  rows   expected  reported  node             ok
+----------------------------------------------------
+0     850    30        30        minikube-m02     yes
+1     853    62        62        minikube         yes
+2     829    61        61        minikube-m02     yes
+3     837    30        30        minikube-m02     yes
+4     738    20        20        minikube-m02     yes
+5     826    50        50        minikube-m02     yes
+6     845    52        52        minikube         yes
+7     686    28        28        minikube-m02     yes
+
+pods reporting: 8 of 8
+all partitions match ground truth: True
+total rows audited: 6464
+total invalid rows reported: 333

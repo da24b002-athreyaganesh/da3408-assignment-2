@@ -1,0 +1,33 @@
+=== ReplicaSet owning these pods ===
+NAME                  DESIRED   CURRENT   READY   AGE
+spam-api-6b756f8459   2         2         2       74s
+
+=== pods BEFORE deletion ===
+NAME                        READY   STATUS    RESTARTS   AGE   IP           NODE           NOMINATED NODE   READINESS GATES
+spam-api-6b756f8459-22dpx   1/1     Running   0          74s   10.244.0.5   minikube       <none>           <none>
+spam-api-6b756f8459-cx9km   1/1     Running   0          74s   10.244.1.8   minikube-m02   <none>           <none>
+
+=== deleting pod: spam-api-6b756f8459-22dpx ===
+pod "spam-api-6b756f8459-22dpx" deleted from default namespace
+
+=== pods immediately after deletion ===
+NAME                        READY   STATUS    RESTARTS   AGE   IP           NODE           NOMINATED NODE   READINESS GATES
+spam-api-6b756f8459-cx9km   1/1     Running   0          76s   10.244.1.8   minikube-m02   <none>           <none>
+spam-api-6b756f8459-x7lwd   0/1     Running   0          2s    10.244.0.6   minikube       <none>           <none>
+
+=== waiting for the replacement to become Ready ===
+pod/spam-api-6b756f8459-cx9km condition met
+pod/spam-api-6b756f8459-x7lwd condition met
+
+=== pods AFTER self-healing ===
+NAME                        READY   STATUS    RESTARTS   AGE   IP           NODE           NOMINATED NODE   READINESS GATES
+spam-api-6b756f8459-cx9km   1/1     Running   0          88s   10.244.1.8   minikube-m02   <none>           <none>
+spam-api-6b756f8459-x7lwd   1/1     Running   0          14s   10.244.0.6   minikube       <none>           <none>
+
+=== the controller's own account of it ===
+Events:
+  Type    Reason            Age   From                   Message
+  ----    ------            ----  ----                   -------
+  Normal  SuccessfulCreate  88s   replicaset-controller  Created pod: spam-api-6b756f8459-cx9km
+  Normal  SuccessfulCreate  88s   replicaset-controller  Created pod: spam-api-6b756f8459-22dpx
+  Normal  SuccessfulCreate  14s   replicaset-controller  Created pod: spam-api-6b756f8459-x7lwd

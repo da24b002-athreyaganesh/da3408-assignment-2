@@ -1,0 +1,24 @@
+# Two-service stack for Q2. No `version:` key -- it is obsolete in Compose v2.
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile        # the multi-stage build from Q1
+    image: spam-api:compose
+    ports:
+      - "8000:8000"
+    environment:
+      REDIS_HOST: cache             # service name doubles as the hostname
+      REDIS_PORT: "6379"
+      CACHE_TTL_SECONDS: "300"
+    depends_on:
+      cache:
+        condition: service_healthy
+
+  cache:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 2s
+      retries: 10

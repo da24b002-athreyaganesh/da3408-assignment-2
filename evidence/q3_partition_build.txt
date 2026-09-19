@@ -1,0 +1,12 @@
+signup_data/signups_part_0.csv: 850 rows, 30 invalid
+signup_data/signups_part_1.csv: 853 rows, 62 invalid
+signup_data/signups_part_2.csv: 829 rows, 61 invalid
+signup_data/signups_part_3.csv: 837 rows, 30 invalid
+signup_data/signups_part_4.csv: 738 rows, 20 invalid
+signup_data/signups_part_5.csv: 826 rows, 50 invalid
+signup_data/signups_part_6.csv: 845 rows, 52 invalid
+signup_data/signups_part_7.csv: 686 rows, 28 invalid
+
+Ground truth -> shard_truth.json
+total rows   : 6464
+total invalid: 333

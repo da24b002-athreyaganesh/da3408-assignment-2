@@ -1,0 +1,55 @@
+=== snapshots where 4 pods were active at once ===
+===== 18:07:21  active=4 =====
+signup-audit-0-mc2rw   0/1   ContainerCreating   0     0s    <none>   minikube-m02   <none>   <none>
+signup-audit-1-r2g2m   0/1   ContainerCreating   0     0s    <none>   minikube       <none>   <none>
+signup-audit-2-gvjmn   0/1   ContainerCreating   0     0s    <none>   minikube-m02   <none>   <none>
+signup-audit-3-x8gdr   0/1   ContainerCreating   0     0s    <none>   minikube-m02   <none>   <none>
+===== 18:07:22  active=4 =====
+signup-audit-0-mc2rw   0/1   ContainerCreating   0     2s    <none>   minikube-m02   <none>   <none>
+signup-audit-1-r2g2m   0/1   ContainerCreating   0     2s    <none>   minikube       <none>   <none>
+signup-audit-2-gvjmn   0/1   ContainerCreating   0     2s    <none>   minikube-m02   <none>   <none>
+signup-audit-3-x8gdr   0/1   ContainerCreating   0     2s    <none>   minikube-m02   <none>   <none>
+===== 18:07:24  active=4 =====
+signup-audit-0-mc2rw   1/1   Running   0     3s    10.244.1.2   minikube-m02   <none>   <none>
+signup-audit-1-r2g2m   1/1   Running   0     3s    10.244.0.3   minikube       <none>   <none>
+signup-audit-2-gvjmn   1/1   Running   0     3s    10.244.1.4   minikube-m02   <none>   <none>
+signup-audit-3-x8gdr   1/1   Running   0     3s    10.244.1.3   minikube-m02   <none>   <none>
+===== 18:07:25  active=4 =====
+signup-audit-0-mc2rw   1/1   Running   0     4s    10.244.1.2   minikube-m02   <none>   <none>
+signup-audit-1-r2g2m   1/1   Running   0     4s    10.244.0.3   minikube       <none>   <none>
+signup-audit-2-gvjmn   1/1   Running   0     4s    10.244.1.4   minikube-m02   <none>   <none>
+signup-audit-3-x8gdr   1/1   Running   0     4s    10.244.1.3   minikube-m02   <none>   <none>
+===== 18:07:26  active=4 =====
+signup-audit-0-mc2rw   1/1   Running   0     5s    10.244.1.2   minikube-m02   <none>   <none>
+signup-audit-1-r2g2m   1/1   Running   0     5s    10.244.0.3   minikube       <none>   <none>
+signup-audit-2-gvjmn   1/1   Running   0     5s    10.244.1.4   minikube-m02   <none>   <none>
+signup-audit-3-x8gdr   1/1   Running   0     5s    10.244.1.3   minikube-m02   <none>   <none>
+===== 18:07:27  active=4 =====
+signup-audit-0-mc2rw   1/1   Running   0     6s    10.244.1.2   minikube-m02   <none>   <none>
+signup-audit-1-r2g2m   1/1   Running   0     6s    10.244.0.3   minikube       <none>   <none>
+signup-audit-2-gvjmn   1/1   Running   0     6s    10.244.1.4   minikube-m02   <none>   <none>
+signup-audit-3-x8gdr   1/1   Running   0     6s    10.244.1.3   minikube-m02   <none>   <none>
+===== 18:07:29  active=4 =====
+signup-audit-0-mc2rw   1/1   Running   0     8s    10.244.1.2   minikube-m02   <none>   <none>
+signup-audit-1-r2g2m   1/1   Running   0     8s    10.244.0.3   minikube       <none>   <none>
+signup-audit-2-gvjmn   1/1   Running   0     8s    10.244.1.4   minikube-m02   <none>   <none>
+signup-audit-3-x8gdr   1/1   Running   0     8s    10.244.1.3   minikube-m02   <none>   <none>
+===== 18:07:30  active=4 =====
+signup-audit-0-mc2rw   1/1   Running   0     9s    10.244.1.2   minikube-m02   <none>   <none>
+signup-audit-1-r2g2m   1/1   Running   0     9s    10.244.0.3   minikube       <none>   <none>
+signup-audit-2-gvjmn   1/1   Running   0     9s    10.244.1.4   minikube-m02   <none>   <none>
+signup-audit-3-x8gdr   1/1   Running   0     9s    10.244.1.3   minikube-m02   <none>   <none>
+
+=== max Running pods seen in any single snapshot ===
+4
+
+=== final placement: which pod ran on which node ===
+NAME                   READY   STATUS      RESTARTS   AGE   IP           NODE           NOMINATED NODE   READINESS GATES
+signup-audit-0-mc2rw   0/1     Completed   0          11m   10.244.1.2   minikube-m02   <none>           <none>
+signup-audit-1-r2g2m   0/1     Completed   0          11m   10.244.0.3   minikube       <none>           <none>
+signup-audit-2-gvjmn   0/1     Completed   0          11m   10.244.1.4   minikube-m02   <none>           <none>
+signup-audit-3-x8gdr   0/1     Completed   0          11m   10.244.1.3   minikube-m02   <none>           <none>
+signup-audit-4-kfwqt   0/1     Completed   0          11m   10.244.1.5   minikube-m02   <none>           <none>
+signup-audit-5-mrwh8   0/1     Completed   0          11m   10.244.1.6   minikube-m02   <none>           <none>
+signup-audit-6-8pnrn   0/1     Completed   0          11m   10.244.0.4   minikube       <none>           <none>
+signup-audit-7-nbkcl   0/1     Completed   0          11m   10.244.1.7   minikube-m02   <none>           <none>

@@ -1,0 +1,32 @@
+NAME           STATUS   ROLES           AGE   VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION     CONTAINER-RUNTIME
+minikube       Ready    control-plane   25m   v1.35.1   192.168.49.2   <none>        Debian GNU/Linux 12 (bookworm)   7.0.0-31-generic   docker://29.2.1
+minikube-m02   Ready    <none>          24m   v1.35.1   192.168.49.3   <none>        Debian GNU/Linux 12 (bookworm)   7.0.0-31-generic   docker://29.2.1
+
+Name:               minikube
+  cpu:                4
+  cpu:                4
+Name:               minikube-m02
+  cpu:                4
+  cpu:                4
+
+status:
+  completedIndexes: 0-7
+  completionTime: "2026-09-19T12:37:44Z"
+  conditions:
+  - lastProbeTime: "2026-09-19T12:37:44Z"
+    lastTransitionTime: "2026-09-19T12:37:44Z"
+    message: Reached expected number of succeeded pods
+    reason: CompletionsReached
+    status: "True"
+    type: SuccessCriteriaMet
+  - lastProbeTime: "2026-09-19T12:37:44Z"
+    lastTransitionTime: "2026-09-19T12:37:44Z"
+    message: Reached expected number of succeeded pods
+    reason: CompletionsReached
+    status: "True"
+    type: Complete
+  ready: 0
+  startTime: "2026-09-19T12:37:21Z"
+  succeeded: 8
+  terminating: 0
+  uncountedTerminatedPods: {}

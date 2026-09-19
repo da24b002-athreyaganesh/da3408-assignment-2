@@ -1,0 +1,3 @@
+TAG       SIZE
+multi     645MB
+naive     2.34GB
